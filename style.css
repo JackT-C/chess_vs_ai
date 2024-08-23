@@ -1,72 +1,99 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    justify-content: center;
     margin: 0;
-}
-
-.container {
-    text-align: center;
-}
-
-h1 {
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 20px;
-}
-
-.game-controls {
+  }
+  .controls {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.turn-indicator {
+    width: 300px;
+    margin-top: 10px;
+  }
+  #turn-indicator {
     font-size: 18px;
-}
-
-#resetButton {
-    padding: 10px 20px;
+    font-weight: bold;
+    margin-right: 20px;
+  }
+  
+  #reset-button {
+    padding: 5px 10px;
     font-size: 16px;
     cursor: pointer;
-}
-
-.chessboard-container {
+  }
+  .chessBoard {
+    width:80vw;
+    height: 80vw;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .square {
+    width:12.5%;
+    height: 12.5%;
+    float: left;
     display: flex;
     justify-content: center;
-}
-
-.chessboard {
-    display: grid;
-    grid-template-columns: repeat(8, 50px);
-    grid-template-rows: repeat(8, 50px);
-    border: 2px solid #333;
-}
-
-.row {
-    display: flex;
-}
-
-.square {
-    width: 50px;
-    height: 50px;
-    display: flex;
     align-items: center;
-    justify-content: center;
+    position: relative;
+  }
+  .white {
+    background-color: #f0d9b5;
+  }
+  .black {
+    background-color: #b58863;
+  }
+  .coordinate {
+    height:auto;
+    display:flex;
+    bottom: 4%;
+    left:4%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .rank {
+    top:4%;
+    right:4%;
+    left:auto;
+  }
+  .whiteText {
+    color:#f0d9b5;
+  }
+  .blackText {
+    color:#b58863;
+  }
+  .piece {
+    width:100%;
+    z-index: 1;
     cursor: pointer;
-}
-
-.occupied {
-    background-color: #ddd;
-}
-
-.empty {
-    background-color: #eee;
-}
-
-.square img {
-    width: 40px;
-    height: 40px;
-}
+  }
+  .piece img {
+    max-width: 100%;
+    width:100%;
+    height: auto;
+  }
+  
+  
+  @media (min-width:600px) {
+    .chessBoard {
+        width:600px;
+        height: 600px;
+    }
+  }
+  @media (max-width:600px) {
+    .coordinate {
+      font-size: 8px;
+    }
+  }
